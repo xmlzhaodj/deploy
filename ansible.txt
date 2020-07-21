@@ -1,0 +1,6 @@
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+pip install pywinrm
+yum install -y http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install ansible
+

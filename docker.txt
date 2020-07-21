@@ -1,0 +1,16 @@
+docker logs -f gitlab 看日志
+
+docker ps 可以看到当前你宿主机在运行的容器
+docker ps -a 可以看到你宿主机在运行和没有在运行的容器
+docker inspect gitlab 
+是查看容器详细的一些参数的信息
+docker rm -f gitlab 是强制删除容器 -f=force
+docker image 是查看镜像
+docker rmi -f gitlab/gitlab-ce:13.1.4-ce.0 
+是删除gitlab/gitlab-ce:13.1.4-ce.0 tag号为13.1.4-ce.0名为gitlab/gitlab-ce的镜像 
+-f是强制删除，从这个镜像起来的容器也会被删除
+不-f 就要先停止容器 删除容器 才能删除镜像
+docker pull gitlab 就是从官方的hub.docker.com 拉gitlab的镜像
+如果不跟tag就代表你啦 gitlab:latest
+docker exec -it gitlab /bin/bash  进去gitlab容器的命令
+gitlab-ctl reconfigure  重置gitlab客户端的命令
