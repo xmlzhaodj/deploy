@@ -1,12 +1,10 @@
-docker pull jenkinsci/blueocean
+yum search openjdk
+yum install java-1.8.0-openjdk
 
-docker run \
--u root \
---restart=always \
--d \
---name=jenkins \
--p 8888:8080 \
--p 50000:50000 \
--v /home/data/jenkins:/var/jenkins_home \
--v /var/run/docker.sock:/var/run/docker.sock \
-jenkinsci/blueocean
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum install jenkins
+systemctl start | stop | restart | status jenkins
+
+rpm -ql jenkins
+/etc/sysconfig/jenkins
