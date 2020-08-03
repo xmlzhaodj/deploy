@@ -1,6 +1,5 @@
 #!/bin/bash
-#author: Vincent 46603415@qq.com
-mkdir -p /home/data/docker
+mkdir -p /data/docker
 if [ -f /etc/yum.repos.d/docker-ce.repo ];then
 rm -rf /etc/yum.repos.d/docker-ce.repo
 fi
@@ -14,7 +13,7 @@ docker version
 cat > /etc/docker/daemon.json <<EOF
 
 {
-    "data-root": "/home/data/docker",
+    "data-root": "/data/docker",
     "storage-driver": "overlay2"
 }
 EOF
