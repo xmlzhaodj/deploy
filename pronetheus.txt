@@ -1,0 +1,21 @@
+docker pull prom/prometheus
+
+docker run \
+-u root \
+-d \
+--name=prometheus \
+--restart=always \
+-p 9090:9090 \
+-v /data/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml \
+-v /data/prometheus/prometheus-data:/prometheus-data \
+prom/prometheus
+
+docker pull grafana/grafana
+
+docker run \
+-u root \
+-d \
+--name=grafana \
+--restart=always \
+-p 3001:3000 \
+grafana/grafana
